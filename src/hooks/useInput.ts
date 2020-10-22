@@ -24,6 +24,7 @@ export function useNameSubmit(input:string) {
     const onSubmit = useCallback((e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         dispatch(saveName(input));
+        
     }, [dispatch,input]);
 
     return {name, onSubmit};

@@ -1,4 +1,5 @@
 import Todo from "../library/types/Todo";
+import { getStorage } from "../library/utils/useStorage";
 
 
 const ADD_TODO = "todo/add_todo" as const;
@@ -21,14 +22,16 @@ const initialState :TodoState= [
         id:0,
         todo: 'test',
         done: false
-    }
+    },
+    
 ]
 
 function todo(state: TodoState = initialState, action:TodoAction) : TodoState{
     switch (action.type){
         case ADD_TODO:
             const nextId = Math.max(...state.map( todo => todo.id), 0) +1 ;
-            console.log(nextId);
+            const storage = getStorage('todo')
+            console.log(storage);
             return[
                 ...state,
                 {
