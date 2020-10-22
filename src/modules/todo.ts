@@ -30,8 +30,7 @@ function todo(state: TodoState = initialState, action:TodoAction) : TodoState{
     switch (action.type){
         case ADD_TODO:
             const nextId = Math.max(...state.map( todo => todo.id), 0) +1 ;
-            const storage = getStorage('todo')
-            console.log(storage);
+            
             return[
                 ...state,
                 {
