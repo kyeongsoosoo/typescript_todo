@@ -1,11 +1,13 @@
-import React from 'react';
-import Styled from './Button.styled';
+import React, { Children } from "react";
+import Styled from "./Button.styled";
 
-function Button() {
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+}
 
-    return (
-        <Styled.Button/>
-    )
+function Button({ children, onClick }: ButtonProps) {
+  return <Styled.Button onClick={onClick}>{children}</Styled.Button>;
 }
 
 export default Button;

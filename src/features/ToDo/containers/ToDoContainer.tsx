@@ -1,19 +1,18 @@
-import React from 'react';
-import ToDoHeader from '../components/ToDoHeader';
-import ToDoInput from '../components/ToDoInput';
-import ToDoList from '../components/ToDoList';
-import ToDoName from '../components/ToDoName';
-import ToDoTemplate from '../components/ToDoTemplate';
+import React from "react";
+import ToDoHeader from "../components/ToDoHeader";
+import ToDoInput from "../components/ToDoInput";
+import ToDoList from "../components/ToDoList";
+import ToDoName from "../components/ToDoName";
 
 function ToDoContainer() {
-    return (
-    <ToDoTemplate>
-        <ToDoHeader />
-        <ToDoName />
-        <ToDoInput name=''/>
-        <ToDoList />
-    </ToDoTemplate>
-    )
+  return (
+    <>
+      <ToDoHeader />
+      <ToDoName />
+      <ToDoInput name="" />
+      <ToDoList />
+    </>
+  );
 }
 
 export default ToDoContainer;
