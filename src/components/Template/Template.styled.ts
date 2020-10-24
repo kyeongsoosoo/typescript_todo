@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ToDoTemplate = styled.div`
+const Template = styled.div`
   position: relative;
   background: white;
   padding: 20px;
@@ -10,5 +10,5 @@ const ToDoTemplate = styled.div`
 `;
 
 export default {
-  ToDoTemplate,
+  Template,
 };

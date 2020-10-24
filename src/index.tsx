@@ -4,11 +4,15 @@ import { Provider } from "react-redux";
 
 import GlobalStyle from "./library/css/GlobalStyle";
 import App from "./components/App";
-import { createStore } from "redux";
-import rootReducer from "./modules";
+import { applyMiddleware, createStore } from "redux";
+import rootReducer, { rootSaga } from "./modules";
 import { BrowserRouter } from "react-router-dom";
+import createSagaMiddleware from "redux-saga";
 
-const store = createStore(rootReducer);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <>
