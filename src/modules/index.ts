@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import { all } from "redux-saga/effects";
 import { listSaga } from "./list";
-import name from "./name";
-import todo from "./todo";
+import { name } from "./name";
+import { todo } from "./todo";
 import { list } from "./list";
 
 const rootReducer = combineReducers({
