@@ -1,18 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-import GlobalStyle from "./library/css/GlobalStyle";
-import App from "./components/App";
-import { applyMiddleware, createStore } from "redux";
-import rootReducer, { rootSaga } from "./modules";
-import { BrowserRouter } from "react-router-dom";
-import createSagaMiddleware from "redux-saga";
+import { applyMiddleware, createStore } from 'redux'
+import { BrowserRouter } from 'react-router-dom'
+import createSagaMiddleware from 'redux-saga'
+import GlobalStyle from './library/css/GlobalStyle'
 
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+import rootReducer, { rootSaga } from './modules'
+import App from './components/App'
 
-sagaMiddleware.run(rootSaga);
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
+
+sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <>
@@ -23,8 +24,8 @@ ReactDOM.render(
       </Provider>
     </BrowserRouter>
   </>,
-  document.getElementById("root")
-);
+  document.getElementById('root'),
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
